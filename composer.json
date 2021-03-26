@@ -1,0 +1,18 @@
+{
+    "name": "skievacd/encryption-handler",
+    "description": "Provee los m\u0000todos de encriptar y desencriptar informaci\u0000n utilizando el esquema de cifrado aes-256-cbc",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos Skieva",
+            "email": "skievacd@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "EncryptionHandler\\Encryption\\": "src/"
+        }
+    }
+}
