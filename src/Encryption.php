@@ -9,10 +9,8 @@ class Encryption
     protected $data;
     protected $iv;
 
-    function __construct($data, $key = '', $method = 'AES-256-CBC', $InitialVector = '') {
-        $this->data = $data;
+    function __construct($key = '', $InitialVector = '') {
         $this->key = $this->passwordDeriveBytes($key, null);
-        $this->method = $method;
         $this->iv = $InitialVector;
     }
 
@@ -32,8 +30,8 @@ class Encryption
         return substr($key, 0, $len);
     }
 
-    function encrypt(): string {
-        return openssl_encrypt($this->data, "aes-256-cbc", $this->key, 0, $this->iv);
+    function encrypt($data = ""): string {
+        return openssl_encrypt($data, "aes-256-cbc", $this->key, 0, $this->iv);
     }
 
     function decrypt($encrypted_data = ""): string {
