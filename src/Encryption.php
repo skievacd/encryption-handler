@@ -36,7 +36,7 @@ class Encryption
         return openssl_encrypt($this->data, "aes-256-cbc", $this->key, 0, $this->iv);
     }
 
-    function decrypt(): string {
-        return openssl_decrypt($this->data, "aes-256-cbc", $this->key, 0, $this->iv);
+    function decrypt($encrypted_data = ""): string {
+        return openssl_decrypt($encrypted_data, "aes-256-cbc", $this->key, 0, $this->iv);
     }
 }
